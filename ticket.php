@@ -63,7 +63,7 @@ $pais = $_SESSION['pais_sigla'];
             <span class="profile-gitHub">
               <img src="/assets/images/icon-github.svg" alt="">
               <?php
-              $user_com_arroba = str_starts_with($user_git, '@') ? (htmlspecialchars($user_git) ?? '') : '@' . (htmlspecialchars($user_git) ?? '');
+              $user_com_arroba = str_starts_with($user_git, '@') ? htmlspecialchars($user_git ?? '') : '@' . htmlspecialchars($user_git ?? '');
               echo "<span class='user-gitHub'>" . $user_com_arroba . "</span>"
               ?>
             </span>
