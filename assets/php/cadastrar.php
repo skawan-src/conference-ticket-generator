@@ -144,5 +144,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-header("Location: /../ticket.php");
+header("Location: /ticket.php");
 exit;
