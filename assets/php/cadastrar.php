@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $_SESSION["usuario_nome"] = $nome;
         $_SESSION["usuario_email"] = $email;
-        $_SESSION["user_git"] = $github;
+        $_SESSION["ususario_git"] = $github;
 
         header("Location: /../ticket.php");
         exit;
