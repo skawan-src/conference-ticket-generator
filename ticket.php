@@ -61,7 +61,11 @@ $pais = $_SESSION['pais_sigla'];
           <img id="ticket-avatar" class="img-avatar" src="" alt="">
           <p><?php echo "<span class='user-name'>" . htmlspecialchars($nome) . "</span>" . "<br>" ?>
             <span class="profile-gitHub">
-              <img src="/assets/images/icon-github.svg" alt=""> <?php echo "<span class='user-gitHub'>" . "@" . htmlspecialchars($user_git) . "</span>" ?>
+              <img src="/assets/images/icon-github.svg" alt=""> 
+              <?php 
+              $user_com_arroba = str_starts_with($user_git, '@') ? htmlspecialchars($user_git) : '@'.htmlspecialchars($user_git);
+              echo "<span class='user-gitHub'>" . $user_com_arroba . "</span>" 
+              ?>
             </span>
           </p>
         </div>
