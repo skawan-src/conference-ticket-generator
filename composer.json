@@ -1,0 +1,10 @@
+{
+    "require": {
+        "ipinfo/ipinfo": "^3.6"
+    },
+    "config": {
+        "platform": {
+            "php": "8.2.32"
+        }
+    }
+}

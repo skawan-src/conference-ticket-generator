@@ -1,0 +1,246 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Inconsolata-Font";
+  src: url("../fonts/Inconsolata-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+}
+
+* {
+  font-family: "Inconsolata-Font", sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+  background: no-repeat url("../images/background-desktop.png") center center;
+  background-size: cover;
+}
+
+body > h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  margin: 0;
+  padding-top: 25px;
+  color: white;
+  transform: scale(0.8);
+}
+
+main {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+header > h2 > img {
+  width: 30px;
+}
+
+header > h1 {
+  color: white;
+  font-size: 2.8rem;
+  width: 700px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+header p:first-of-type {
+  color: hsl(252, 6%, 83%);
+  font-size: 1.1rem;
+}
+
+section#center {
+  width: 400px;
+}
+
+aside > p {
+  color: white;
+}
+
+aside > .upload-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 15px;
+  background-color: rgba(183, 183, 255, 0.073);
+  border: 1.6px dashed rgba(255, 255, 255, 0.34);
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.upload-avatar.drag-over {
+  background: rgba(255, 255, 255, 0.299);
+  border: 2px solid white;
+}
+
+.upload-avatar > .around-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 8px 10px 8px;
+  background-color: rgba(255, 255, 255, 0.123);
+  border: 1px solid rgba(255, 255, 255, 0.116);
+  border-radius: 13px;
+}
+
+.upload-avatar > .around-img > img {
+  width: 30px;
+  height: 25px;
+}
+
+.upload-avatar > .send {
+  text-align: center;
+}
+
+.upload-avatar > .send > p {
+  display: block;
+  color: hsl(252, 6%, 83%);
+  margin-bottom: 0;
+}
+
+.upload-avatar > .send .btnImg {
+  display: none;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.107);
+  border: 1px solid rgba(255, 255, 255, 0.158);
+  border-style: solid;
+  border-radius: 3px;
+  color: white;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+
+.btnVisible {
+  display: inline;
+}
+
+.info-upload > p {
+  color: hsl(252, 6%, 83%);
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  row-gap: 8px;
+
+  margin-top: 30px;
+}
+
+.info-error {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  height: 20px;
+
+  color: #f37362;
+  font-size: 0.6rem;
+}
+
+.info-img {
+  width: 15px;
+  height: 15px;
+}
+
+form p:last-of-type {
+  margin-bottom: 0;
+}
+
+form label {
+  color: white;
+}
+
+form > .around-input input {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.461);
+  border-radius: 10px;
+  height: 25px;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 94.6%;
+  /* margin-bottom: 15px; */
+}
+
+form input::placeholder {
+  color: hsl(252, 6%, 83%);
+  font-size: 1rem;
+}
+
+form input:focus {
+  outline: 0;
+}
+
+form input:focus {
+  border: 1px solid white;
+}
+
+form button {
+  padding: 15px;
+  background-color: hsl(7, 88%, 67%);
+  color: hsl(248, 70%, 10%);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+/* Garante que o ticket comece escondido */
+section#ticket {
+  display: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+}
+
+section#ticket h1 {
+  color: rgb(255, 255, 255);
+  font-size: 2.8rem;
+  width: 700px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+/* [OPCIONAL] Adicione uma classe utilitária de controle no final do CSS */
+.hidden {
+  display: none !important;
+}
+
+.show-ticket {
+  display: flex !important;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

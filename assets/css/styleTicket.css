@@ -1,0 +1,152 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Inconsolata-Font";
+  src: url("../fonts/Inconsolata-VariableFont_wdth\,wght.ttf")
+    format("truetype");
+}
+
+* {
+  font-family: "Inconsolata-Font", sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+  background:
+    url("../images/pattern-circle.svg") no-repeat right center / 150px,
+    url("../images/pattern-squiggly-line-bottom-desktop.svg") no-repeat left
+      bottom / 650px,
+    url("../images/pattern-squiggly-line-top.svg") no-repeat right top / 500px,
+    url("../images/pattern-lines.svg") no-repeat center center / auto,
+    url("../images/background-desktop.png") no-repeat center center / cover;
+}
+
+body h2.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  margin: 0;
+  padding-top: 25px;
+  color: white;
+  font-size: 2.1rem;
+  transform: scale(0.8);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+header h1 {
+  color: white;
+  font-size: 2.8rem;
+  width: 700px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+header h1 > span.name {
+  background-image: linear-gradient(
+    to right,
+    hsl(7, 86%, 67%),
+    hsl(0, 0%, 100%)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+header p {
+  margin-top: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.861);
+}
+
+header p > span.email {
+  color: hsl(7, 86%, 67%);
+}
+
+section.ticket {
+  position: relative;
+  width: 450px;
+  margin: 0 auto;
+
+  margin-top: 60px;
+}
+
+section.ticket > img {
+  display: block;
+  width: 450px;
+  height: auto;
+}
+
+.texto-sobreposto {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+}
+
+.texto-sobreposto > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 0px 33px;
+  width: 100%;
+}
+
+span.textDate {
+  font-size: 0.8rem;
+  margin: auto;
+  color: hsl(252, 6%, 83%);
+}
+
+div.profile {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+
+  padding: 18px;
+  margin-top: 45px;
+}
+
+div.profile > .img-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+div.profile p {
+  margin: 0;
+}
+
+div.profile p > span.profile-gitHub {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 5px;
+}
+
+div.profile p > span.profile-gitHub > img {
+  width: 15px;
+} 
+
+span.profile-gitHub > span.user-gitHub {
+  color: white;
+}
+
+div.profile p > span.user-name {
+  font-size: 1.2rem;
+  color: white;
+}
+
+

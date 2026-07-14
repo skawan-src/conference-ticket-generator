@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Conference ticket generator</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <h2><img src="assets/images/logo-mark.svg" alt="" />Coding Conf</h2>
+    <main>
+      <!-- Form starts -->
+      <header>
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </header>
+      <section id="center">
+        <aside>
+          <p>Upload Avatar</p>
+          <div class="upload-avatar">
+            <div class="around-img">
+              <img id="img-upload" src="assets/images/icon-upload.svg" alt="" />
+            </div>
+            <div class="send">
+              <p>Drag and drop or click to upload Upload</p>
+              <button class="btnImg btnRemoveImg">Remove image</button>
+              <button class="btnImg btnChangeImg">Change image</button>
+            </div>
+            <input
+              type="file"
+              name="image"
+              id="fileInput"
+              accept="image/jpeg image/png"
+              hidden
+            />
+          </div>
+          <div class="info-upload">
+            <p>
+              <img
+                class="info-img"
+                src="assets/images/simbolo-de-informacao.png"
+                alt=""
+              />
+              Upload your photo (JPG or PNG, max size: 500KB).
+            </p>
+          </div>
+        </aside>
+        <form action="assets/php/cadastrar.php" method="post">
+          <label for="nameId">Full Name</label>
+          <div class="around-input around-error">
+            <input type="text" id="nameId" name="nome" />
+          </div>
+          <div class="msg-infoName info-error"></div>
+
+          <label for="emailId">Email Adress</label>
+          <div class="around-input around-error">
+            <input
+              type="email"
+              id="emailId"
+              placeholder="example@email.com"
+              name="email"
+            />
+          </div>
+          <div class="msg-infoEmail info-error"></div>
+
+          <label for="githubId">GitHub Username</label>
+          <div class="around-input around-error">
+            <input
+              type="text"
+              id="githubId"
+              placeholder="@yourusername"
+              name="github"
+            />
+          </div>
+          <div class="msg-infoGitHub info-error"></div>
+
+          <button id="button-generator" type="submit">
+            Generate My Ticket
+          </button>
+        </form>
+      </section>
+    </main>
+    <section id="ticket">
+      <h1>
+        Congrats, <span id="ticket-user-name">Full Name</span>! Your ticket is
+        ready.
+      </h1>
+      <p>
+        We've emailed your ticket to
+        <span id="ticket-user-email">Email Address</span>
+      </p>
+
+      <div class="ticket-card">
+        <div class="ticket-avatar" id="ticket-user-avatar"></div>
+        <p class="ticket-github" id="ticket-user-github">@username</p>
+      </div>
+    </section>
+    <!-- Form ends -->
+    <!-- Generated tickets starts -->
+
+    <!-- Congrats, -->
+    <!-- Full Name! Your ticket is ready. We've emailed your ticket to -->
+    <!-- Email Address -->
+    <!-- and will send updates in the run up to the event. Coding Conf Jan 31, 2025 /
+      Austin, TX -->
+    <!-- Generated tickets ends -->
+    <!-- <footer class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+      </footer> -->
+    <script src="assets/js/script.js"></script>
+    <script>
+      // Verifica os parâmetros da URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const formulario = document.querySelector('form');
+      if (urlParams.get("erro") === "email_duplicado") {
+        // Cria um elemento de aviso
+        const alerta = document.createElement("div");
+        alerta.style.color = "red";
+        alerta.style.fontWeight = "bold";
+        alerta.style.marginBottom = "15px";
+        alerta.innerText =
+          "Este e-mail já está cadastrado para outro ingresso!";
+
+        formulario.insertBefore(alerta, formulario.firstChild);
+
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname,
+        );
+      }
+    </script>
+  </body>
+</html>

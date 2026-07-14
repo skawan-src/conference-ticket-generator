@@ -1,0 +1,48 @@
+services:
+  # Serviço 1: PHP com Apache
+  php:
+    build: .
+    container_name: php
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - rede-projeto
+
+  # Serviço 2: Banco de Dados MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: senha
+      MYSQL_DATABASE: cadastro
+    ports:
+      - "3306:3306"
+    volumes:
+      - dados_mysql:/var/lib/mysql
+    networks:
+      - rede-projeto
+
+  # Serviço 3: Interface do phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    container_name: phpmyadmin
+    restart: always
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    networks:
+      - rede-projeto
+
+networks:
+  rede-projeto:
+    driver: bridge
+
+volumes:
+  dados_mysql:
