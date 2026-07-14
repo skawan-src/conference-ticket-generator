@@ -35,7 +35,7 @@ $pais = $_SESSION['pais_sigla'];
   <main>
     <header>
       <h1>
-        Congrats, <?php echo "<span class='name'>" . htmlspecialchars($nome) . "!</span>"; ?>
+        Congrats, <?php echo "<span class='name'>" . htmlspecialchars($nome) . "!</span>";?> <br>
         Your ticket is ready.
       </h1>
       <p>
