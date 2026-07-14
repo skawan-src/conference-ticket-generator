@@ -83,6 +83,11 @@ $_SESSION['mesText'] = $meses[$indiceMes];
 
 // Processamento do Formulário POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    unset($_SESSION["usuario_nome"]);
+    unset($_SESSION["usuario_email"]);
+    unset($_SESSION["usuario_git"]);
+
     $nome = isset($_POST["nome"]) ? trim($_POST["nome"]) : "";
     $email = isset($_POST["email"]) ? trim($_POST["email"]) : "";
     $github = isset($_POST["github"]) ? trim($_POST["github"]) : "";
