@@ -167,11 +167,13 @@ function myScope() {
   function handleFile(file) {
     if (!CONFIG.allowedTypes.includes(file.type)) {
       alert("Apenas imagens JPG ou PNG são permitidas.");
+      resetPreview();
       return;
     }
 
     if (file.size > CONFIG.maxSizeInBytes) {
       alert("O arquivo é muito grande! O tamanho máximo é 500KB.");
+      resetPreview();
       return;
     }
 
