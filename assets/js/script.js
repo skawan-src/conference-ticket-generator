@@ -145,8 +145,8 @@ function myScope() {
     // Se o formulário não for válido (Dados vázios)
     if (!isFormValid) {
       e.preventDefault();
-      form.reset();
-      resetPreview();
+      // form.reset();
+      // resetPreview();
       return;
     }
 
