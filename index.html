@@ -17,7 +17,7 @@
     <main>
       <!-- Form starts -->
       <header>
-        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1><br>
         <p>Secure your spot at next year's biggest coding conference.</p>
       </header>
       <section id="center">
@@ -51,6 +51,7 @@
             </p>
           </div>
         </aside>
+        
         <form action="assets/php/cadastrar.php" method="post">
           <label for="nameId">Full Name</label>
           <div class="around-input around-error">
@@ -101,27 +102,11 @@
         <p class="ticket-github" id="ticket-user-github">@username</p>
       </div>
     </section>
-    <!-- Form ends -->
-    <!-- Generated tickets starts -->
-
-    <!-- Congrats, -->
-    <!-- Full Name! Your ticket is ready. We've emailed your ticket to -->
-    <!-- Email Address -->
-    <!-- and will send updates in the run up to the event. Coding Conf Jan 31, 2025 /
-      Austin, TX -->
-    <!-- Generated tickets ends -->
-    <!-- <footer class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
-      </footer> -->
     <script src="assets/js/script.js"></script>
     <script>
-      // Verifica os parâmetros da URL
       const urlParams = new URLSearchParams(window.location.search);
-      const formulario = document.querySelector('form');
+      const formulario = document.querySelector("form");
       if (urlParams.get("erro") === "email_duplicado") {
-        // Cria um elemento de aviso
         const alerta = document.createElement("div");
         alerta.style.color = "red";
         alerta.style.fontWeight = "bold";

@@ -7,6 +7,7 @@
 
 * {
   font-family: "Inconsolata-Font", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -14,39 +15,43 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  box-sizing: border-box;
-  background: no-repeat url("../images/background-desktop.png") center center;
-  background-size: cover;
+  background:
+    url("../images/pattern-squiggly-line-bottom-desktop.svg") no-repeat left
+      bottom / 700px,
+    url("../images/pattern-squiggly-line-top.svg") no-repeat right top / 500px,
+    url("../images/pattern-lines.svg") no-repeat center center / auto,
+    url("../images/background-desktop.png") no-repeat center center / cover;
 }
 
 body > h2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 15px;
   margin: 0;
-  padding-top: 25px;
+  padding-top: 13px;
   color: white;
-  transform: scale(0.8);
+  transform: translate(-50%) scale(0.70);
 }
 
 main {
   position: absolute;
   top: 0;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-flow: column;
-  width: 100%;
-  height: 100%;
-  transform: scale(0.8);
-}
-
-header {
+    
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  width: 100vw;
+  transform: scale(0.8);
+}
+
+header {
+  text-align: center;
 }
 
 header > h2 > img {
@@ -58,17 +63,31 @@ header > h1 {
   font-size: 2.8rem;
   width: 700px;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 0;
 }
 
 header p:first-of-type {
   color: hsl(252, 6%, 83%);
   font-size: 1.1rem;
+  margin: 0;
+  margin-top: 15px;
 }
 
 section#center {
-  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+
+  background: url("../images/pattern-circle.svg") no-repeat right center / 180px;
+  width: 750px;
+  transform: scale(0.98);
+  
+}
+
+aside {
+  align-self: center;
+  width: 450px;
 }
 
 aside > p {
@@ -85,6 +104,11 @@ aside > .upload-avatar {
   border: 1.6px dashed rgba(255, 255, 255, 0.34);
   border-radius: 13px;
   cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.upload-avatar:hover {
+  background-color: rgba(255, 255, 255, 0.193);
 }
 
 .upload-avatar.drag-over {
@@ -135,18 +159,20 @@ aside > .upload-avatar {
 
 .info-upload > p {
   color: hsl(252, 6%, 83%);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: center;
   column-gap: 5px;
 }
 
 form {
-  display: flex;
+  /* display: flex;
   flex-flow: column;
-  row-gap: 8px;
+  row-gap: 8px; */
+  align-self: center;
+  width: 450px; 
 
-  margin-top: 30px;
+  margin-top: 13px;
 }
 
 .info-error {
@@ -156,7 +182,8 @@ form {
   height: 20px;
 
   color: #f37362;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
+  margin: 5px 0 5px 0;
 }
 
 .info-img {
@@ -172,16 +199,35 @@ form label {
   color: white;
 }
 
+form > .around-input {
+  margin-top: 5px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+
+  padding: 3.5px;
+  transition: border 0.3s;
+}
+
+form > .around-input:has(input:focus) {
+  border-color: rgba(255, 255, 255, 0.713);
+}
+
 form > .around-input input {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.071);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.461);
   border-radius: 10px;
-  height: 25px;
+  height: 50px;
   font-size: 1.2rem;
   padding: 10px;
-  width: 94.6%;
+  width: 100%;
+  transition: background-color 0.5s;
   /* margin-bottom: 15px; */
+}
+
+form > .around-input input:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.193);
 }
 
 form input::placeholder {
@@ -193,11 +239,12 @@ form input:focus {
   outline: 0;
 }
 
-form input:focus {
+/* form input:focus {
   border: 1px solid white;
-}
+} */
 
 form button {
+  display: block;
   padding: 15px;
   background-color: hsl(7, 88%, 67%);
   color: hsl(248, 70%, 10%);
@@ -205,7 +252,14 @@ form button {
   border-radius: 10px;
   font-size: 1.1rem;
   font-weight: bolder;
+  width: 100%;
   cursor: pointer;
+  margin: auto;
+  transition: background-color 0.5s;
+}
+
+form button:hover {
+  background-color: hsl(7, 99%, 58%);
 }
 
 /* Garante que o ticket comece escondido */
