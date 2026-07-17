@@ -35,13 +35,13 @@ body > h2 {
   margin: 0;
   padding-top: 13px;
   color: white;
-  transform: translate(-50%) scale(0.70);
+  transform: translate(-50%) scale(0.7);
 }
 
 main {
   position: absolute;
   top: 0;
-    
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,9 +80,8 @@ section#center {
   flex-flow: column;
 
   background: url("../images/pattern-circle.svg") no-repeat right center / 180px;
-  width: 750px;
+  width: 785px;
   transform: scale(0.98);
-  
 }
 
 aside {
@@ -170,7 +169,7 @@ form {
   flex-flow: column;
   row-gap: 8px; */
   align-self: center;
-  width: 450px; 
+  width: 450px;
 
   margin-top: 13px;
 }

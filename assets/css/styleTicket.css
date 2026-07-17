@@ -6,6 +6,7 @@
 }
 
 * {
+  box-sizing: border-box;
   font-family: "Inconsolata-Font", sans-serif;
 }
 
@@ -14,7 +15,6 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  box-sizing: border-box;
   background:
     url("../images/pattern-circle.svg") no-repeat right center / 150px,
     url("../images/pattern-squiggly-line-bottom-desktop.svg") no-repeat left
@@ -24,7 +24,7 @@ body {
     url("../images/background-desktop.png") no-repeat center center / cover;
 }
 
-body h2.titulo {
+body > h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,7 @@ body h2.titulo {
   padding-top: 25px;
   color: white;
   font-size: 2.1rem;
-  transform: scale(0.8);
+  transform: scale(.6);
 }
 
 header {
@@ -75,13 +75,36 @@ header p > span.email {
 
 section.ticket {
   position: relative;
-  width: 450px;
-  margin: 0 auto;
+  background: url("../images/pattern-circle.svg") no-repeat right center / 150px;
+  width: 540px;
+  /* margin: 0 auto; */
 
+  margin: auto;
   margin-top: 60px;
 }
 
-section.ticket > img {
+h2.titulo {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  column-gap: 15px;
+  margin: 0;
+  padding: 25px 0px 10px 18px;
+  color: white;
+  font-size: 2rem;
+  width: 365px;
+}
+
+h2.titulo > img {
+  width: 35px;
+  height: 35px;
+}
+
+section.ticket > .image-ticket {
+  width: 100%;
+}
+
+.image-ticket > img {
   display: block;
   width: 450px;
   height: auto;
@@ -92,20 +115,24 @@ section.ticket > img {
 
   top: 0;
   left: 0;
+  width: 450px;
 }
 
 .texto-sobreposto > p {
-  display: flex;
-  align-items: center;
+  /* display: flex;
   justify-content: center;
-  margin: 0px 0px 0px 33px;
-  width: 100%;
+  align-items: center; */
+  width: 200px;
+  margin: 0px 0px 0px 45px;
 }
 
 span.textDate {
-  font-size: 0.8rem;
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
   margin: auto;
   color: hsl(252, 6%, 83%);
+  width: 200px;
 }
 
 div.profile {
@@ -114,11 +141,11 @@ div.profile {
   align-items: center;
   gap: 10px;
 
-  padding: 18px;
+  padding: 15px;
   margin-top: 45px;
 }
 
-div.profile > .img-avatar{
+div.profile > .img-avatar {
   width: 50px;
   height: 50px;
   border-radius: 10px;
@@ -138,7 +165,7 @@ div.profile p > span.profile-gitHub {
 
 div.profile p > span.profile-gitHub > img {
   width: 15px;
-} 
+}
 
 span.profile-gitHub > span.user-gitHub {
   color: white;
@@ -148,5 +175,3 @@ div.profile p > span.user-name {
   font-size: 1.2rem;
   color: white;
 }
-
-

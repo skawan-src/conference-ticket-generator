@@ -31,11 +31,11 @@ $pais = $_SESSION['pais_sigla'];
 </head>
 
 <body>
-  <h2 class="titulo"><img src="/assets/images/logo-mark.svg" alt="" />Coding Conf</h2>
+  <h2><img src="/assets/images/logo-mark.svg" alt="" />Coding Conf</h2>
   <main>
     <header>
       <h1>
-        Congrats, <?php echo "<span class='name'>" . htmlspecialchars($nome) . "!</span>";?> <br>
+        Congrats, <?php echo "<span class='name'>" . htmlspecialchars($nome) . "!</span>"; ?> <br>
         Your ticket is ready.
       </h1>
       <p>
@@ -45,14 +45,10 @@ $pais = $_SESSION['pais_sigla'];
         the run up to the event.
       </p>
     </header>
-    <!-- Form ends -->
-    <!-- Generated tickets starts -->
-
-    <!-- Congrats, -->
-    <!-- Full Name! Your ticket is ready. We've emailed your ticket to -->
-    <!-- Email Address -->
     <section class="ticket">
-      <img src="/assets/images/pattern-ticket.svg" alt="">
+      <div class="image-ticket">
+        <img src="/assets/images/pattern-ticket.svg" alt="">
+      </div>
       <div class="texto-sobreposto">
         <h2 class="titulo tticket"><img src="/assets/images/logo-mark.svg" alt="" />Coding Conf</h2>
         <p><?php echo "<span class='textDate'>" . htmlspecialchars($mesText) . ' ' . htmlspecialchars($dia) . ', ' . htmlspecialchars($ano) . ' ' . '/ ' . htmlspecialchars($cidade) . ', ' . htmlspecialchars($estado) . "</span>" ?></p>
@@ -71,15 +67,7 @@ $pais = $_SESSION['pais_sigla'];
         </div>
       </div>
     </section>
-    <!-- and will send updates in the run up to the event. Coding Conf Jan 31, 2025 /
-          Austin, TX -->
   </main>
-  <!-- Generated tickets ends -->
-  <!-- <footer class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
-      </footer> -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const avatarImg = document.getElementById("ticket-avatar");
